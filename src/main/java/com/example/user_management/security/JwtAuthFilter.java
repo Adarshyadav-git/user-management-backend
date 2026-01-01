@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -21,14 +23,7 @@ import java.util.Collections;
 public class JwtAuthFilter extends OncePerRequestFilter {
 
     private final JwtUtil jwtUtil;
-
-    @Override
-    protected boolean shouldNotFilter(HttpServletRequest request) {
-        String path = request.getServletPath();
-        return path.equals("/")
-                || path.startsWith("/api/auth")
-                || path.equals("/api/users/register");
-    }
+    private final UserDetailsService userDetailsService;
 
     @Override
     protected void doFilterInternal(
@@ -44,27 +39,31 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             return;
         }
 
-        String token = authHeader.substring(7);
+        String jwt = authHeader.substring(7);
+        String username = jwtUtil.extractUsername(jwt);
 
-        if (jwtUtil.validateToken(token)) {
-            String email = jwtUtil.extractUsername(token);
-            String role = jwtUtil.extractRole(token);
+        if (username != null &&
+                SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            UsernamePasswordAuthenticationToken authentication =
-                    new UsernamePasswordAuthenticationToken(
-                            email,
-                            null,
-                            Collections.singletonList(
-                                    new SimpleGrantedAuthority("ROLE_" + role)
-                            )
-                    );
+            UserDetails userDetails =
+                    userDetailsService.loadUserByUsername(username);
 
-            authentication.setDetails(
-                    new WebAuthenticationDetailsSource().buildDetails(request)
-            );
+            if (jwtUtil.validateToken(jwt)) {
+                UsernamePasswordAuthenticationToken authToken =
+                        new UsernamePasswordAuthenticationToken(
+                                userDetails,
+                                null,
+                                userDetails.getAuthorities()
+                        );
 
-            SecurityContextHolder.getContext()
-                    .setAuthentication(authentication);
+                authToken.setDetails(
+                        new WebAuthenticationDetailsSource()
+                                .buildDetails(request)
+                );
+
+                SecurityContextHolder.getContext()
+                        .setAuthentication(authToken);
+            }
         }
 
         filterChain.doFilter(request, response);
