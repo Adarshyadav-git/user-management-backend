@@ -1,7 +1,7 @@
-package com.example.user_management.Dto;
+package com.example.user_management.dto;
 
 import lombok.*;
-import com.example.user_management.Entity.User;
+import com.example.user_management.entity.User;
 
 import java.time.LocalDateTime;
 

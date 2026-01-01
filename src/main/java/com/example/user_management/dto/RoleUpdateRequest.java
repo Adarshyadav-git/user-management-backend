@@ -1,6 +1,6 @@
-package com.example.user_management.Dto;
+package com.example.user_management.dto;
 
-import com.example.user_management.Entity.Role;
+import com.example.user_management.entity.Role;
 import lombok.Getter;
 import lombok.Setter;
 

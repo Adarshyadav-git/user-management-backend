@@ -1,4 +1,4 @@
-package com.example.user_management.Exception;
+package com.example.user_management.exception;
 
 public class InvalidRoleException extends RuntimeException{
     public InvalidRoleException(String message){

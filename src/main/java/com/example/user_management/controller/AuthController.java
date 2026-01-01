@@ -1,9 +1,9 @@
-package com.example.user_management.Controller;
+package com.example.user_management.controller;
 
-import com.example.user_management.Config.JwtUtil;
-import com.example.user_management.Dto.JwtResponse;
-import com.example.user_management.Dto.LoginRequest;
-import com.example.user_management.Service.UserService;
+import com.example.user_management.config.JwtUtil;
+import com.example.user_management.dto.JwtResponse;
+import com.example.user_management.dto.LoginRequest;
+import com.example.user_management.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

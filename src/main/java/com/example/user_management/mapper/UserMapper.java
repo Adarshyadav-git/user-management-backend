@@ -1,7 +1,7 @@
-package com.example.user_management.Mapper;
+package com.example.user_management.mapper;
 
-import com.example.user_management.Dto.UserResponse;
-import com.example.user_management.Entity.User;
+import com.example.user_management.dto.UserResponse;
+import com.example.user_management.entity.User;
 import org.springframework.stereotype.Component;
 
 @Component

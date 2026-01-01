@@ -1,8 +1,8 @@
-package com.example.user_management.Controller;
+package com.example.user_management.controller;
 
-import com.example.user_management.Dto.RoleUpdateRequest;
-import com.example.user_management.Dto.UserResponse;
-import com.example.user_management.Service.UserService;
+import com.example.user_management.dto.RoleUpdateRequest;
+import com.example.user_management.dto.UserResponse;
+import com.example.user_management.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;

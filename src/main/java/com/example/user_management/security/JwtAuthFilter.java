@@ -1,6 +1,6 @@
 package com.example.user_management.security;
 
-import com.example.user_management.Config.JwtUtil;
+import com.example.user_management.config.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

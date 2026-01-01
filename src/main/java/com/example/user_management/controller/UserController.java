@@ -1,10 +1,8 @@
-package com.example.user_management.Controller;
+package com.example.user_management.controller;
 
-import com.example.user_management.Dto.LoginRequest;
-import com.example.user_management.Dto.LoginResponse;
-import com.example.user_management.Dto.UserRequest;
-import com.example.user_management.Dto.UserResponse;
-import com.example.user_management.Service.UserService;
+import com.example.user_management.dto.UserRequest;
+import com.example.user_management.dto.UserResponse;
+import com.example.user_management.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

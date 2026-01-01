@@ -1,9 +1,9 @@
-package com.example.user_management.Service;
+package com.example.user_management.service;
 
 
-import com.example.user_management.Dto.UserRequest;
-import com.example.user_management.Dto.UserResponse;
-import com.example.user_management.Entity.Role;
+import com.example.user_management.dto.UserRequest;
+import com.example.user_management.dto.UserResponse;
+import com.example.user_management.entity.Role;
 
 import java.util.List;
 

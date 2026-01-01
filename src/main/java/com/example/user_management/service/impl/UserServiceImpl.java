@@ -1,15 +1,14 @@
-package com.example.user_management.Service.impl;
+package com.example.user_management.service.impl;
 
-import com.example.user_management.Config.JwtUtil;
-import com.example.user_management.Dto.UserRequest;
-import com.example.user_management.Dto.UserResponse;
-import com.example.user_management.Entity.Role;
-import com.example.user_management.Entity.User;
-import com.example.user_management.Exception.InvalidRoleException;
-import com.example.user_management.Exception.UserNotFoundException;
-import com.example.user_management.Mapper.UserMapper;
-import com.example.user_management.Repository.UserRepository;
-import com.example.user_management.Service.UserService;
+import com.example.user_management.config.JwtUtil;
+import com.example.user_management.dto.UserRequest;
+import com.example.user_management.dto.UserResponse;
+import com.example.user_management.entity.Role;
+import com.example.user_management.entity.User;
+import com.example.user_management.exception.UserNotFoundException;
+import com.example.user_management.mapper.UserMapper;
+import com.example.user_management.repository.UserRepository;
+import com.example.user_management.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
