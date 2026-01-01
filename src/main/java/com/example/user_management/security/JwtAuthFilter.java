@@ -1,4 +1,4 @@
-package com.example.user_management.Security;
+package com.example.user_management.security;
 
 import com.example.user_management.Config.JwtUtil;
 import jakarta.servlet.FilterChain;

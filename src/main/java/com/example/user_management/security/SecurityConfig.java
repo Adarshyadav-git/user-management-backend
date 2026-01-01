@@ -1,4 +1,4 @@
-package com.example.user_management.Security;
+package com.example.user_management.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
