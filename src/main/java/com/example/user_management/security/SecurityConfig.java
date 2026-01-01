@@ -28,8 +28,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/",
-                                "/health",
-                                "/api/auth/**"
+                                "/api/auth/**",
+                                "/api/users/register"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
@@ -38,4 +38,5 @@ public class SecurityConfig {
         return http.build();
     }
 }
+
 
