@@ -25,7 +25,6 @@ public class AdminController {
 
     // get user by id
     @GetMapping("/users/{id}")
-    @PreAuthorize("permitAll()")
     public UserResponse getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
     }

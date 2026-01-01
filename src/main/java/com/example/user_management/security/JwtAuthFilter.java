@@ -47,7 +47,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         String token = authHeader.substring(7);
 
         if (jwtUtil.validateToken(token)) {
-
             String email = jwtUtil.extractUsername(token);
             String role = jwtUtil.extractRole(token);
 
@@ -71,4 +70,3 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
-
