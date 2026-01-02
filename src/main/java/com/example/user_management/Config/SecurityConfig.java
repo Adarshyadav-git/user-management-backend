@@ -1,4 +1,4 @@
-package com.example.user_management.config;
+package com.example.user_management.Config;
 
 import com.example.user_management.security.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.user_management.config;
+package com.example.user_management.Config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

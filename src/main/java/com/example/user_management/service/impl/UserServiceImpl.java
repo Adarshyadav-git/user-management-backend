@@ -1,6 +1,6 @@
 package com.example.user_management.service.impl;
 
-import com.example.user_management.config.JwtUtil;
+import com.example.user_management.Config.JwtUtil;
 import com.example.user_management.dto.UserRequest;
 import com.example.user_management.dto.UserResponse;
 import com.example.user_management.entity.Role;
